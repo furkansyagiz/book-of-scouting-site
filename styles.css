@@ -7,6 +7,10 @@
   --accent: #b88b4a;
   --border: #d8dee8;
   --shadow: 0 12px 40px rgba(15, 30, 51, 0.08);
+  /* Rotating pastel card surfaces (use with .card + .card-pastel-1|2|3 in any section). */
+  --card-pastel-1: #e8edf5;
+  --card-pastel-2: #f2ebe3;
+  --card-pastel-3: #e6f0ec;
 }
 
 * {
@@ -64,8 +68,11 @@ a {
 }
 
 .container {
-  width: min(1120px, 92%);
+  max-width: 1120px;
+  width: 100%;
   margin: 0 auto;
+  /* Symmetric gutters so section blocks align with the header and don’t read “shifted” on wide screens. */
+  padding-inline: clamp(1rem, 4vw, 2rem);
 }
 
 .section {
@@ -214,7 +221,14 @@ a {
 
 .hero-subtitle {
   color: var(--muted);
-  margin-bottom: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Hero uses the same star strip as testimonials; slightly larger for the headline column. */
+#hero .hero-stars.testimonial-stars {
+  margin-top: 0;
+  margin-bottom: 1.1rem;
+  font-size: 1.28rem;
 }
 
 .hero-actions {
@@ -285,6 +299,25 @@ a {
   margin-top: 1rem;
 }
 
+/* Equal-height cells: align card tops in a row and pin .btn to the bottom when copy length differs. */
+.content-grid .card:not(.contributor-card) {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+}
+
+.content-grid .card:not(.contributor-card) .btn {
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+/* Full-width card directly under a 2- or 3-col grid should match the grid’s vertical rhythm. */
+.content-grid.two + .card,
+.content-grid.three + .card {
+  margin-top: 1rem;
+}
+
 .market-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -296,17 +329,44 @@ a {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 14px;
-  padding: 1.25rem;
+  padding: 1.5rem;
   box-shadow: 0 4px 14px rgba(15, 30, 51, 0.04);
+}
+
+/* Optional soft tints: stack with .card; cycle 1 → 2 → 3 for visual variety in dense grids. */
+.card.card-pastel-1 {
+  background: var(--card-pastel-1);
+  border-color: #c5d0e0;
+}
+
+.card.card-pastel-2 {
+  background: var(--card-pastel-2);
+  border-color: #d9cfc3;
+}
+
+.card.card-pastel-3 {
+  background: var(--card-pastel-3);
+  border-color: #b8d0c4;
 }
 
 .card ul {
   margin: 0.7rem 0 0;
-  padding-left: 1rem;
+  /* Keep marker outside so body copy and bullets share the same left edge as headings. */
+  padding-left: 1.15rem;
+  list-style-position: outside;
 }
 
 .card li {
   margin: 0.35rem 0;
+}
+
+/* Filled star row for testimonial cards (decorative; label is for screen readers). */
+.testimonial-stars {
+  margin: 0.15rem 0 0.6rem;
+  font-size: 1.15rem;
+  line-height: 1.2;
+  letter-spacing: 0.2em;
+  color: #c9a227;
 }
 
 /* Face-card layout for worldwide contributors section. */

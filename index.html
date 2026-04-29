@@ -9,7 +9,12 @@
       content="The official website for The Book of Scouting – Volume One by Tarkan Batgun, a professional manual on modern scouting, recruitment, data, AI, and football decision-making."
     />
 
-    <!-- Open Graph (WhatsApp, Facebook, LinkedIn, etc.): featured image + preview text -->
+    <!--
+      Open Graph: WhatsApp/Meta crawlers need absolute https image URLs; relative paths often omit the thumbnail.
+      Canonical domain must match how users share the link (here: https://bookofscouting.com/).
+    -->
+    <link rel="canonical" href="https://bookofscouting.com/" />
+    <meta property="og:url" content="https://bookofscouting.com/" />
     <meta property="og:site_name" content="The Book of Scouting" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="The Book of Scouting – Volume One | Tarkan Batgun" />
@@ -17,8 +22,11 @@
       property="og:description"
       content="The Architect’s Blueprint for Evidence-Based Recruitment — a 500-page manual on modern scouting, recruitment, data, AI, and football decision-making."
     />
-    <!-- Space in filename is URL-encoded for crawlers (WhatsApp/Facebook require a reachable image URL on your live host). -->
-    <meta property="og:image" content="assets/book/Book%20Cover.png" />
+    <meta
+      property="og:image"
+      content="https://bookofscouting.com/assets/book/Book%20Cover.png"
+    />
+    <meta property="og:image:secure_url" content="https://bookofscouting.com/assets/book/Book%20Cover.png" />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1080" />
     <meta property="og:image:height" content="1350" />
@@ -32,7 +40,7 @@
       name="twitter:description"
       content="The Architect’s Blueprint for Evidence-Based Recruitment — a 500-page manual on modern scouting, recruitment, data, AI, and football decision-making."
     />
-    <meta name="twitter:image" content="assets/book/Book%20Cover.png" />
+    <meta name="twitter:image" content="https://bookofscouting.com/assets/book/Book%20Cover.png" />
     <meta name="twitter:image:alt" content="The Book of Scouting Volume One — book cover" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -70,6 +78,9 @@
             <p class="eyebrow">Official Book Launch Website</p>
             <h1>The Book of Scouting – Volume One</h1>
             <h2 class="hero-subtitle">The Architect’s Blueprint for Evidence-Based Recruitment</h2>
+            <p class="testimonial-stars hero-stars" role="img" aria-label="5 out of 5 stars">
+              <span aria-hidden="true">★★★★★</span>
+            </p>
             <p>
               Modern football has reached a crossroads where traditional scouting and data science must either merge
               or fail. This 500-page professional manual introduces the Four Worlds of Evaluation to replace haphazard
@@ -133,7 +144,7 @@
         <div class="container">
           <h2>About the Book</h2>
           <div class="content-grid two">
-            <article class="card">
+            <article class="card card-pastel-1">
               <h3>The core idea</h3>
               <p>
                 In elite football recruitment, the human eye remains irreplaceable, yet isolated intuition creates the
@@ -141,14 +152,14 @@
                 knowing.
               </p>
             </article>
-            <article class="card">
+            <article class="card card-pastel-2">
               <h3>A Complete Manual for the Modern Club</h3>
               <p>
                 A 500-page blueprint for evaluating players with greater precision, structuring recruitment
                 departments, and integrating Artificial Intelligence without losing the value of human judgment.
               </p>
             </article>
-            <article class="card">
+            <article class="card card-pastel-3">
               <h3>Asking the Right Questions</h3>
               <ul>
                 <li>Where does the player function best?</li>
@@ -157,7 +168,7 @@
                 <li>What changes if the tactical context changes?</li>
               </ul>
             </article>
-            <article class="card quote-card">
+            <article class="card card-pastel-1 quote-card">
               <blockquote>
                 “A transfer is merely a transaction; a decision is a process. Anyone can buy a player. Only a leader
                 can build a structure that identifies, validates, and secures the right player.”
@@ -165,7 +176,7 @@
             </article>
           </div>
           <div class="content-grid two">
-            <article class="card">
+            <article class="card card-pastel-2">
               <h3>The Four Worlds of Evaluation</h3>
               <ul>
                 <li><strong>Data Intelligence:</strong> normalize performance and reduce bias.</li>
@@ -177,7 +188,7 @@
                 Artificial Intelligence acts as the accelerator, translator, and control layer across all four worlds.
               </p>
             </article>
-            <article class="card">
+            <article class="card card-pastel-3">
               <h3>The Decision Architecture</h3>
               <p>
                 This is not just a book about transfers. It is a book about decisions, structures, better questions,
@@ -199,27 +210,27 @@
             The complete framework of modern scouting, from core philosophy to advanced technical structures.
           </p>
           <div class="content-grid three">
-            <article class="card">
+            <article class="card card-pastel-1">
               <h3>Part I: The Foundations of Scouting</h3>
               <p>Modern standards, the four worlds, context, human factors, and navigating bias.</p>
             </article>
-            <article class="card">
+            <article class="card card-pastel-2">
               <h3>Part II: Seeing the Game Differently</h3>
               <p>Behaviours over actions, tempo and space, role-based scouting, and pattern recognition.</p>
             </article>
-            <article class="card">
+            <article class="card card-pastel-3">
               <h3>Part III: The Structure Around Scouting</h3>
               <p>Data & AI alliances, youth development, pathways, and high-impact decision-making.</p>
             </article>
-            <article class="card">
+            <article class="card card-pastel-1">
               <h3>Part IV: The Future of Scouting</h3>
               <p>Loan departments, succession planning, and leadership across technical teams.</p>
             </article>
-            <article class="card">
+            <article class="card card-pastel-2">
               <h3>Part V: Worldwide Contributors</h3>
               <p>Exclusive insights from owners, directors, scouts, coaches, agents, and media.</p>
             </article>
-            <article class="card">
+            <article class="card card-pastel-3">
               <h3>Technical Appendices</h3>
               <p>Department structure, AI systems, checklists, templates, pathways, and glossary (A–Z).</p>
             </article>
@@ -393,6 +404,9 @@
           <div class="content-grid two">
             <article class="card">
               <h3>Dr. Mustafa Erogut</h3>
+              <p class="testimonial-stars" role="img" aria-label="5 out of 5 stars">
+                <span aria-hidden="true">★★★★★</span>
+              </p>
               <p class="muted">Former Vice President, Turkish Football Federation | Former Vice President, İstanbul Başakşehir FK</p>
               <blockquote>“Thanks to Tarkan Batgun for his contribution to football academies and football literature. This book is something one of a kind.”</blockquote>
               <p><strong>The Perspective:</strong> One of the most respected football leaders in Türkiye, with extensive experience in club leadership, federation management, and institutional planning.</p>
@@ -400,6 +414,9 @@
             </article>
             <article class="card">
               <h3>Riccardo Polacco</h3>
+              <p class="testimonial-stars" role="img" aria-label="5 out of 5 stars">
+                <span aria-hidden="true">★★★★★</span>
+              </p>
               <p class="muted">Chief Scout, Olympique de Marseille</p>
               <blockquote>
                 “Scouting is a special world. Continuous evolution exists. The Book of Scouting covers all this and I
@@ -416,6 +433,9 @@
             </article>
             <article class="card">
               <h3>Steven Vanharen</h3>
+              <p class="testimonial-stars" role="img" aria-label="5 out of 5 stars">
+                <span aria-hidden="true">★★★★★</span>
+              </p>
               <p class="muted">Sporting & Technical Director, ETO FC Győr</p>
               <blockquote>
                 “I am very happy to be in The Book of Scouting Volume One. The author, Tarkan Batgun, bundled his
@@ -431,6 +451,9 @@
             </article>
             <article class="card">
               <h3>Jiro Kitahara</h3>
+              <p class="testimonial-stars" role="img" aria-label="5 out of 5 stars">
+                <span aria-hidden="true">★★★★★</span>
+              </p>
               <p class="muted">Head of Scouting & Methodology, FC Tokyo</p>
               <blockquote>“Scouting is the most important element in football. We can learn a lot from The Book of Scouting.”</blockquote>
               <p><strong>The Perspective:</strong> A key figure behind FC Tokyo methodology at the intersection of academy structure and first-team planning.</p>
@@ -438,6 +461,9 @@
             </article>
             <article class="card">
               <h3>Mark Coonen</h3>
+              <p class="testimonial-stars" role="img" aria-label="5 out of 5 stars">
+                <span aria-hidden="true">★★★★★</span>
+              </p>
               <p class="muted">International Player Agent | Former Recruiter, PEC Zwolle</p>
               <blockquote>
                 “I am really happy to be part of The Book of Scouting Volume One. This book is amazing. It is about
@@ -460,7 +486,7 @@
           <h2>Media & Events</h2>
           <p class="lead">Global Book Launches: Establishing an International Standard</p>
           <div class="content-grid two">
-            <article class="card">
+            <article class="card card-pastel-1">
               <h3>Asian Launch: Baku, Azerbaijan</h3>
               <p>Azerbaijan Football Conference | June 6–7, 2026</p>
               <p>
@@ -468,7 +494,7 @@
                 architecture within federations and emerging leagues.
               </p>
             </article>
-            <article class="card">
+            <article class="card card-pastel-2">
               <h3>European Launch: Budapest, Hungary</h3>
               <p>Hungarian Football Forum | 2026</p>
               <p>
@@ -477,7 +503,7 @@
               </p>
               <a class="btn btn-secondary" href="#">Watch Event Summary</a>
             </article>
-            <article class="card">
+            <article class="card card-pastel-3">
               <h3>Türkiye Launch: Istanbul</h3>
               <p>Acıbadem Sports | 2026</p>
               <p>
@@ -486,7 +512,7 @@
               </p>
               <a class="btn btn-secondary" href="#">Watch Event Summary</a>
             </article>
-            <article class="card">
+            <article class="card card-pastel-1">
               <h3>Americas & Beyond</h3>
               <p>Coming Soon</p>
               <p>
@@ -495,7 +521,7 @@
               </p>
             </article>
           </div>
-          <article class="card">
+          <article class="card card-pastel-2">
             <h3>Media Resources & Speaking</h3>
             <p>Tarkan Batgun is available for international keynotes, moderation and technical workshops.</p>
             <ul>
@@ -556,7 +582,7 @@
           <h2>Contact</h2>
           <p class="lead">Connect with the Decision Architecture Team</p>
           <div class="content-grid three">
-            <article class="card">
+            <article class="card card-pastel-1">
               <h3>Speaking & Engagements</h3>
               <p>
                 For keynote speaking, expert moderation and technical workshops on AI in football and recruitment
@@ -564,18 +590,18 @@
               </p>
               <p><a href="mailto:info@comparisonator.com">info@comparisonator.com</a></p>
             </article>
-            <article class="card">
+            <article class="card card-pastel-2">
               <h3>Institutional Inquiries</h3>
               <p>For clubs, federations, or agencies interested in bulk orders or consulting services.</p>
               <p><a href="mailto:info@comparisonator.com">info@comparisonator.com</a></p>
             </article>
-            <article class="card">
+            <article class="card card-pastel-3">
               <h3>Media & General Questions</h3>
               <p>For interview requests, press kit access, and general questions about the book.</p>
               <p><a href="mailto:info@comparisonator.com">info@comparisonator.com</a></p>
             </article>
           </div>
-          <article class="card">
+          <article class="card card-pastel-1">
             <h3>Connect Online</h3>
             <ul>
               <li><a href="https://www.linkedin.com/in/tarkan-batgun/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
@@ -591,7 +617,7 @@
           <h2>Collaborators</h2>
           <p class="lead">The Ecosystem Behind the Book</p>
           <div class="content-grid two">
-            <article class="card">
+            <article class="card card-pastel-1">
               <h3>Comparisonator</h3>
               <p>
                 The AI-powered data architecture and benchmarking infrastructure that forms the core of the manual’s
@@ -599,12 +625,12 @@
               </p>
               <a href="https://comparisonator.com" target="_blank" rel="noopener noreferrer">Visit Website</a>
             </article>
-            <article class="card">
+            <article class="card card-pastel-2">
               <h3>The Football Week</h3>
               <p>Official publishing partner responsible for global distribution and editorial excellence.</p>
               <a href="https://thefootballweek.com/" target="_blank" rel="noopener noreferrer">Visit Website</a>
             </article>
-            <article class="card">
+            <article class="card card-pastel-3">
               <h3>Acıbadem Sports Academy</h3>
               <p>
                 Launch Sponsor: Türkiye. Hosted the inaugural launch connecting elite sports science with modern
@@ -612,14 +638,14 @@
               </p>
               <a href="https://www.acibademsportsacademy.com/" target="_blank" rel="noopener noreferrer">Visit Website</a>
             </article>
-            <article class="card">
+            <article class="card card-pastel-1">
               <h3>Football Forum Hungary</h3>
               <p>
                 Book Launch Sponsor: Europe. Platform for the European debut and leadership engagement.
               </p>
               <a href="https://footballforumhungary.hu/en/" target="_blank" rel="noopener noreferrer">Visit Website</a>
             </article>
-            <article class="card">
+            <article class="card card-pastel-2">
               <h3>Football Conference Baku</h3>
               <p>Book Launch Sponsor: Asia. Host of the official Asian launch for the Four Worlds architecture.</p>
               <a href="https://qolat.com/az/event-detail/16" target="_blank" rel="noopener noreferrer">Visit Website</a>
