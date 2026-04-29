@@ -4,14 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The Book of Scouting – Volume One | Tarkan Batgun</title>
+    <!-- Tab icon (Chrome, Safari, Firefox, Edge); relative URL resolves from site root when deployed. -->
+    <link rel="icon" href="assets/collaborators/website-favicon.png" type="image/png" sizes="any" />
+    <link rel="apple-touch-icon" href="assets/collaborators/website-favicon.png" />
     <meta
       name="description"
       content="The official website for The Book of Scouting – Volume One by Tarkan Batgun, a professional manual on modern scouting, recruitment, data, AI, and football decision-making."
     />
 
     <!--
-      Open Graph: WhatsApp/Meta crawlers need absolute https image URLs; relative paths often omit the thumbnail.
-      Canonical domain must match how users share the link (here: https://bookofscouting.com/).
+      Open Graph: WhatsApp/Meta need absolute https URLs and must fetch the image (no auth).
+      Use og-share.jpg — ASCII path + ~270KB — avoids crawlers choking on spaces / huge PNG (Book Cover.png).
+      Refresh cache: https://developers.facebook.com/tools/debug/ — then retry WhatsApp after deploy.
     -->
     <link rel="canonical" href="https://bookofscouting.com/" />
     <meta property="og:url" content="https://bookofscouting.com/" />
@@ -22,14 +26,11 @@
       property="og:description"
       content="The Architect’s Blueprint for Evidence-Based Recruitment — a 500-page manual on modern scouting, recruitment, data, AI, and football decision-making."
     />
-    <meta
-      property="og:image"
-      content="https://bookofscouting.com/assets/book/Book%20Cover.png"
-    />
-    <meta property="og:image:secure_url" content="https://bookofscouting.com/assets/book/Book%20Cover.png" />
-    <meta property="og:image:type" content="image/png" />
-    <meta property="og:image:width" content="1080" />
-    <meta property="og:image:height" content="1350" />
+    <meta property="og:image" content="https://bookofscouting.com/assets/book/og-share.jpg" />
+    <meta property="og:image:secure_url" content="https://bookofscouting.com/assets/book/og-share.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="1500" />
     <meta property="og:image:alt" content="The Book of Scouting Volume One — book cover" />
     <meta property="og:locale" content="en_US" />
 
@@ -40,7 +41,7 @@
       name="twitter:description"
       content="The Architect’s Blueprint for Evidence-Based Recruitment — a 500-page manual on modern scouting, recruitment, data, AI, and football decision-making."
     />
-    <meta name="twitter:image" content="https://bookofscouting.com/assets/book/Book%20Cover.png" />
+    <meta name="twitter:image" content="https://bookofscouting.com/assets/book/og-share.jpg" />
     <meta name="twitter:image:alt" content="The Book of Scouting Volume One — book cover" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -77,6 +78,39 @@
           <div>
             <p class="eyebrow">Official Book Launch Website</p>
             <h1>The Book of Scouting – Volume One</h1>
+            <div class="hero-author-row">
+              <a class="hero-author" href="#about-author">
+                <img
+                  class="hero-author-photo"
+                  src="assets/author/tarkan-batgun.jpg"
+                  width="64"
+                  height="64"
+                  alt=""
+                  decoding="async"
+                />
+                <span class="hero-author-text">By <span class="hero-author-name">Tarkan Batgun</span></span>
+              </a>
+              <a
+                class="hero-partner"
+                href="https://comparisonator.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Comparisonator — visit company website"
+              >
+                <span class="hero-partner-badge">
+                  <!-- Mark-only asset (square) stays legible in the 56px circle; wordmark stays in the footer strip. -->
+                  <img
+                    class="hero-partner-logo"
+                    src="assets/collaborators/comparisonator-icon-light.png"
+                    alt=""
+                    width="40"
+                    height="40"
+                    decoding="async"
+                  />
+                </span>
+                <span class="hero-partner-text"><span class="hero-partner-role">Comparisonator CEO</span></span>
+              </a>
+            </div>
             <h2 class="hero-subtitle">The Architect’s Blueprint for Evidence-Based Recruitment</h2>
             <p class="testimonial-stars hero-stars" role="img" aria-label="5 out of 5 stars">
               <span aria-hidden="true">★★★★★</span>
@@ -778,6 +812,36 @@
         </div>
       </section>
     </main>
+
+    <aside class="comparisonator-banner" aria-label="The Book of Scouting powered by Comparisonator">
+      <div class="container comparisonator-banner__inner">
+        <a
+          class="comparisonator-banner__logo-link"
+          href="https://comparisonator.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <!-- Full wordmark + mark; white SVG suits the dark gradient bar. -->
+          <img
+            class="comparisonator-banner__logo"
+            src="assets/collaborators/comparisonator-logo-light.svg"
+            alt="Comparisonator — AI-powered football recruitment platform"
+            decoding="async"
+          />
+        </a>
+        <div class="comparisonator-banner__copy">
+          <p class="comparisonator-banner__title">The Book of Scouting</p>
+          <p class="comparisonator-banner__powered"><span class="comparisonator-banner__powered-label">Powered by</span> Comparisonator</p>
+          <p class="comparisonator-banner__tagline">
+            Compare, search, and recruit with precision across 271 leagues — the methodology behind this book shares DNA with
+            the Comparisonator platform.
+          </p>
+          <a class="comparisonator-banner__cta" href="https://comparisonator.com" target="_blank" rel="noopener noreferrer">
+            Explore Comparisonator
+          </a>
+        </div>
+      </div>
+    </aside>
 
     <footer class="site-footer">
       <div class="container footer-grid">

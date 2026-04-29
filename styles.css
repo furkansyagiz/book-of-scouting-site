@@ -7,10 +7,10 @@
   --accent: #b88b4a;
   --border: #d8dee8;
   --shadow: 0 12px 40px rgba(15, 30, 51, 0.08);
-  /* Rotating pastel card surfaces (use with .card + .card-pastel-1|2|3 in any section). */
-  --card-pastel-1: #e8edf5;
-  --card-pastel-2: #f2ebe3;
-  --card-pastel-3: #e6f0ec;
+  /* Rotating pastel card surfaces — slightly richer tints so cards read clearly on --bg. */
+  --card-pastel-1: #d9e5f3;
+  --card-pastel-2: #efe4d6;
+  --card-pastel-3: #d6ebe2;
 }
 
 * {
@@ -219,6 +219,94 @@ a {
   align-items: center;
 }
 
+/* Author + Comparisonator row under the title (both use circular 56px marks). */
+.hero-author-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.65rem 1.35rem;
+  margin: 0.35rem 0 0.85rem;
+}
+
+.hero-author {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 999px;
+  outline-offset: 4px;
+}
+
+.hero-author:hover .hero-author-name {
+  text-decoration: underline;
+}
+
+.hero-author-photo {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(15, 30, 51, 0.14);
+  flex-shrink: 0;
+}
+
+.hero-author-text {
+  font-size: 1rem;
+  color: var(--muted);
+}
+
+.hero-author-name {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.hero-partner {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin: 0;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 999px;
+  outline-offset: 4px;
+}
+
+.hero-partner:hover .hero-partner-role {
+  text-decoration: underline;
+}
+
+.hero-partner-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--primary);
+  flex-shrink: 0;
+  border: 2px solid rgba(15, 30, 51, 0.22);
+  padding: 6px;
+  box-sizing: border-box;
+}
+
+.hero-partner-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.hero-partner-text {
+  font-size: 1rem;
+  color: var(--muted);
+}
+
+.hero-partner-role {
+  font-weight: 600;
+  color: var(--text);
+}
+
 .hero-subtitle {
   color: var(--muted);
   margin-bottom: 0.5rem;
@@ -336,17 +424,17 @@ a {
 /* Optional soft tints: stack with .card; cycle 1 → 2 → 3 for visual variety in dense grids. */
 .card.card-pastel-1 {
   background: var(--card-pastel-1);
-  border-color: #c5d0e0;
+  border-color: #b5c6dc;
 }
 
 .card.card-pastel-2 {
   background: var(--card-pastel-2);
-  border-color: #d9cfc3;
+  border-color: #d3c4b0;
 }
 
 .card.card-pastel-3 {
   background: var(--card-pastel-3);
-  border-color: #b8d0c4;
+  border-color: #9fc7b6;
 }
 
 .card ul {
@@ -442,6 +530,121 @@ a {
 
 #about-author .author-grid > div > p {
   margin: 0;
+}
+
+/* Full-width partner strip above the footer (dark gradient + light Comparisonator wordmark). */
+.comparisonator-banner {
+  background: linear-gradient(105deg, #0f2744 0%, #0a1628 42%, #050508 100%);
+  color: #f2f6fc;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.comparisonator-banner__inner {
+  display: grid;
+  grid-template-columns: minmax(0, auto) minmax(0, 1fr);
+  gap: clamp(1.25rem, 4vw, 2.75rem);
+  /* Stretch so the logo column can match the full height of the copy + CTA column. */
+  align-items: stretch;
+  padding: clamp(1.75rem, 4vw, 2.5rem) 0;
+}
+
+.comparisonator-banner__logo-link {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  line-height: 0;
+  min-height: 0;
+}
+
+.comparisonator-banner__logo {
+  display: block;
+  /* Aim for visual parity with the headline + body block (~same band height as the text column). */
+  height: clamp(120px, 14vw, 200px);
+  width: auto;
+  max-width: min(440px, 48vw);
+  object-fit: contain;
+  object-position: left center;
+}
+
+.comparisonator-banner__copy {
+  min-width: 0;
+}
+
+/* Serif headline + sans supporting lines keep parity with the rest of the marketing site. */
+.comparisonator-banner__title {
+  margin: 0 0 0.35rem;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+.comparisonator-banner__powered {
+  margin: 0 0 0.75rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #b8c9e0;
+}
+
+.comparisonator-banner__powered-label {
+  font-weight: 500;
+  color: #8fa6c3;
+  margin-right: 0.35rem;
+}
+
+.comparisonator-banner__tagline {
+  margin: 0 0 1rem;
+  font-size: 0.98rem;
+  line-height: 1.55;
+  color: #c9d6ea;
+  max-width: 52ch;
+}
+
+/* Outline CTA: visible focus ring for keyboard users on dark bg. */
+.comparisonator-banner__cta {
+  display: inline-block;
+  padding: 0.55rem 1.1rem;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.comparisonator-banner__cta:hover,
+.comparisonator-banner__cta:focus-visible {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.55);
+}
+
+@media (max-width: 720px) {
+  .comparisonator-banner__inner {
+    grid-template-columns: 1fr;
+    align-items: center;
+    text-align: center;
+  }
+
+  .comparisonator-banner__logo-link {
+    justify-content: center;
+    justify-self: center;
+  }
+
+  .comparisonator-banner__logo {
+    height: clamp(96px, 28vw, 160px);
+    max-width: min(360px, 88vw);
+    object-position: center center;
+  }
+
+  .comparisonator-banner__tagline {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 .footer-grid {
