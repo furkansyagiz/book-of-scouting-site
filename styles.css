@@ -1,0 +1,546 @@
+:root {
+  --bg: #f7f7f5;
+  --surface: #ffffff;
+  --text: #122033;
+  --muted: #50617a;
+  --primary: #0f1e33;
+  --accent: #b88b4a;
+  --border: #d8dee8;
+  --shadow: 0 12px 40px rgba(15, 30, 51, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.65;
+}
+
+img {
+  border-color: transparent;
+  border-image: none;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0 0 0.75rem;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  line-height: 1.15;
+  letter-spacing: 0.02em;
+}
+
+h1 {
+  font-size: clamp(2.1rem, 5vw, 4.2rem);
+}
+
+h2 {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+}
+
+h3 {
+  font-size: clamp(1.25rem, 2vw, 1.6rem);
+  font-weight: 900;
+}
+
+p,
+li,
+a,
+button {
+  font-size: 1rem;
+}
+
+a {
+  color: inherit;
+}
+
+.container {
+  width: min(1120px, 92%);
+  margin: 0 auto;
+}
+
+.section {
+  padding: 5rem 0;
+  scroll-margin-top: 96px;
+}
+
+.section.alt {
+  background: #eef1f6;
+}
+
+.lead {
+  color: var(--muted);
+  font-size: 1.12rem;
+  margin-bottom: 1.4rem;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  background: rgba(247, 247, 245, 0.96);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-wrap {
+  min-height: 78px;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.brand {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-decoration: none;
+  margin-right: auto;
+  white-space: nowrap;
+}
+
+.site-nav {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.site-nav a {
+  text-decoration: none;
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+.site-nav a:hover,
+.site-nav a:focus-visible {
+  color: var(--text);
+}
+
+.nav-cta {
+  white-space: nowrap;
+  flex-shrink: 0;
+  padding-inline: 1rem;
+}
+
+/* Keep desktop header readable before switching to mobile menu. */
+@media (max-width: 1320px) {
+  .brand {
+    font-size: 1.25rem;
+  }
+
+  .site-nav {
+    gap: 0.55rem;
+  }
+
+  .site-nav a {
+    font-size: 1rem;
+  }
+
+  .nav-cta {
+    display: none;
+  }
+}
+
+.btn {
+  border-radius: 999px;
+  padding: 0.72rem 1.3rem;
+  text-decoration: none;
+  border: 1px solid transparent;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: #fff;
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  background: #1e3252;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus-visible {
+  background: #e7ecf5;
+}
+
+/* Override shared section spacing for the hero block only. */
+#hero {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.hero-subtitle {
+  color: var(--muted);
+  margin-bottom: 1.2rem;
+}
+
+.hero-actions {
+  margin-top: 1.8rem;
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.book-cover-placeholder,
+.author-placeholder {
+  min-height: 360px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: linear-gradient(160deg, #0f1e33, #223a60);
+  color: #fff;
+  padding: 1.5rem;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+
+.book-cover-placeholder {
+  overflow: visible;
+  width: 100%;
+  height: 100%;
+  padding-top: 0;
+  padding-bottom: 0;
+  /* Hero book placeholder background uses the requested centered circular gradient. */
+  background: radial-gradient(circle at 50% 50%, #007b83, #01124d);
+}
+
+.book-cover-placeholder img,
+.author-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.book-cover-placeholder img {
+  width: 122%;
+  max-width: none;
+  height: auto;
+  object-fit: contain;
+  transform: translateX(2%) scale(1.08);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.book-cover-placeholder p:first-child {
+  color: #e8c691;
+  font-weight: 700;
+}
+
+.content-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.content-grid.two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 1rem;
+}
+
+.content-grid.three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 1rem;
+}
+
+.market-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.25rem;
+  box-shadow: 0 4px 14px rgba(15, 30, 51, 0.04);
+}
+
+.card ul {
+  margin: 0.7rem 0 0;
+  padding-left: 1rem;
+}
+
+.card li {
+  margin: 0.35rem 0;
+}
+
+/* Face-card layout for worldwide contributors section. */
+.contributor-card {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.contributor-photo {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 2px solid var(--border);
+}
+
+.contributor-card p {
+  margin: 0;
+}
+
+#contributors > .container > h3 {
+  margin-top: 12px;
+}
+
+.quote-card blockquote {
+  margin: 0;
+  border-left: 3px solid var(--accent);
+  padding-left: 1rem;
+  color: #243a58;
+}
+
+.author-grid {
+  display: grid;
+  grid-template-columns: 0.7fr 1.3fr;
+  gap: 1.2rem;
+}
+
+/* Keep the author section image and content visually balanced on wide screens. */
+#about-author .author-grid {
+  grid-template-columns: minmax(260px, 340px) minmax(0, 1fr);
+  align-items: start;
+  gap: 1.4rem;
+}
+
+/* Use a framed portrait block so the image feels intentional, not stretched. */
+#about-author .author-placeholder {
+  min-height: 0;
+  padding: 0.75rem;
+  background: #102749;
+  border-color: #1a3458;
+  position: sticky;
+  top: 6.25rem;
+  align-self: start;
+}
+
+/* Lock portrait proportions and crop from upper-center for better face focus. */
+#about-author .author-placeholder img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center 18%;
+  border-radius: 10px;
+}
+
+#about-author .author-grid > div {
+  display: grid;
+  gap: 1rem;
+}
+
+#about-author .author-grid > div > p {
+  margin: 0;
+}
+
+.footer-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem 0 1rem;
+}
+
+.site-footer {
+  border-top: 1px solid var(--border);
+  background: #0f1e33;
+  color: #dae3f1;
+}
+
+.footer-links,
+.social-links {
+  display: flex;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+}
+
+.link-btn {
+  border: 0;
+  background: transparent;
+  color: #dae3f1;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+}
+
+.copyright {
+  margin: 0;
+  text-align: center;
+  padding: 0 1rem 2rem;
+  color: #b6c4d9;
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 0.25rem;
+  border: 1px solid var(--border);
+  background: #fff;
+  padding: 0.4rem;
+  border-radius: 8px;
+}
+
+.menu-toggle span {
+  width: 20px;
+  height: 2px;
+  background: var(--primary);
+}
+
+.policy-modal {
+  max-width: 720px;
+  width: min(92vw, 720px);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 0;
+}
+
+.policy-modal::backdrop {
+  background: rgba(15, 30, 51, 0.55);
+}
+
+.policy-modal article {
+  padding: 1.5rem;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.45s ease, transform 0.45s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 1060px) {
+  .site-nav {
+    position: absolute;
+    top: 78px;
+    left: 0;
+    right: 0;
+    background: #f7f7f5;
+    border-bottom: 1px solid var(--border);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 4%;
+  }
+
+  .site-nav.open {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-cta {
+    display: none;
+  }
+
+  .hero-grid,
+  .author-grid,
+  .content-grid.two,
+  .content-grid.three,
+  .market-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .book-cover-placeholder,
+  .author-placeholder {
+    min-height: 250px;
+  }
+
+  /* Reduce intentional hero image overflow on smaller screens for readability. */
+  .book-cover-placeholder img {
+    width: 108%;
+    transform: scale(1.03);
+  }
+
+  .contributor-card {
+    align-items: flex-start;
+  }
+
+  .contributor-photo {
+    width: 72px;
+    height: 72px;
+  }
+
+  /* Remove sticky behavior and tighten portrait sizing on smaller screens. */
+  #about-author .author-placeholder {
+    position: static;
+    top: auto;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  #about-author .author-placeholder img {
+    aspect-ratio: 3 / 4;
+    object-position: center 15%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal,
+  .reveal.visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
