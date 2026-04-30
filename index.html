@@ -124,7 +124,12 @@
             </p>
             <div class="hero-actions">
               <a class="btn btn-primary" href="#buy-the-book">Buy The Book</a>
-              <a class="btn btn-secondary" href="#free-sample">Download Free Sample</a>
+              <a
+                class="btn btn-secondary"
+                href="assets/sample/FREE%20SAMPLE-The%20Book%20of%20Scouting.pdf"
+                download="FREE-SAMPLE-The-Book-of-Scouting.pdf"
+                >Download Free Sample</a
+              >
             </div>
           </div>
           <aside class="book-cover-placeholder" aria-label="The Book of Scouting cover image">
@@ -790,46 +795,93 @@
             </ul>
           </article>
           <h3 class="media-interviews-heading">Interviews</h3>
-          <article class="card card-pastel-2">
-            <!-- Keep this list clean: only publication names and direct links. -->
-            <ul>
-              <li>
-                <a
-                  href="https://comparisonator.com/company-news/tarkan-batguns-nieuwsblad-interview-how-artificial-intelligence-is-also-making-its-rise-in-football-what-used-to-take-hours-ai-can-do-in-seconds"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >Nieuwsblad Interview</a
-                >
-              </li>
-              <li>
-                <a
-                  href="https://www.liverpoolecho.co.uk/sport/football/football-news/five-ways-everton-can-improve-32900953"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >Liverpool Echo Interview</a
-                >
-              </li>
-              <li>
-                <a href="https://comparisonator.com/blog/will-ai-replace-coaches-an-expert-explains-how-footballs-future-looks" target="_blank" rel="noopener noreferrer"
-                  >ProSport Romania Interview</a
-                >
-              </li>
-              <li>
-                <a href="https://www.marca.com/en/football/2025/11/18/691c430d268e3e755e8b456f.html" target="_blank" rel="noopener noreferrer">Marca Interview</a>
-              </li>
-              <li>
-                <a
-                  href="https://comparisonator.com/blog/tarkan-batguns-greece-sport24-interview-these-are-the-young-greek-footballers-who-stand-out"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >Sport24 Interview</a
-                >
-              </li>
-              <li>
-                <a href="https://thefootballweek.com/2026/01/12/who-is-tarkan-batgun/" target="_blank" rel="noopener noreferrer">The Football Week Profile</a>
-              </li>
-            </ul>
-          </article>
+          <!-- Each card is a single linked tile (image + title) pointing at the original article. -->
+          <div class="content-grid three media-interviews-grid">
+            <a
+              class="card media-interview-card"
+              href="https://comparisonator.com/company-news/tarkan-batguns-nieuwsblad-interview-how-artificial-intelligence-is-also-making-its-rise-in-football-what-used-to-take-hours-ai-can-do-in-seconds"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                class="media-interview-card__image"
+                src="assets/interviews/interview-nieuwsblad.jpg"
+                alt="Nieuwsblad interview — featured image"
+                loading="lazy"
+              />
+              <span class="media-interview-card__title">Nieuwsblad Interview</span>
+            </a>
+            <a
+              class="card media-interview-card"
+              href="https://www.liverpoolecho.co.uk/sport/football/football-news/five-ways-everton-can-improve-32900953"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                class="media-interview-card__image"
+                src="assets/interviews/interview-liverpool-echo.jpg"
+                alt="Liverpool Echo interview — featured image"
+                loading="lazy"
+              />
+              <span class="media-interview-card__title">Liverpool Echo Interview</span>
+            </a>
+            <a
+              class="card media-interview-card"
+              href="https://comparisonator.com/blog/will-ai-replace-coaches-an-expert-explains-how-footballs-future-looks"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                class="media-interview-card__image"
+                src="assets/interviews/interview-prosport.jpg"
+                alt="ProSport Romania interview — featured image"
+                loading="lazy"
+              />
+              <span class="media-interview-card__title">ProSport Romania Interview</span>
+            </a>
+            <a
+              class="card media-interview-card"
+              href="https://www.marca.com/en/football/2025/11/18/691c430d268e3e755e8b456f.html"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                class="media-interview-card__image"
+                src="assets/interviews/interview-marca.jpg"
+                alt="Marca interview — featured image"
+                loading="lazy"
+              />
+              <span class="media-interview-card__title">Marca Interview</span>
+            </a>
+            <a
+              class="card media-interview-card"
+              href="https://comparisonator.com/blog/tarkan-batguns-greece-sport24-interview-these-are-the-young-greek-footballers-who-stand-out"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                class="media-interview-card__image"
+                src="assets/interviews/interview-greece-sports.jpg"
+                alt="Sport24 interview — featured image"
+                loading="lazy"
+              />
+              <span class="media-interview-card__title">Sport24 Interview</span>
+            </a>
+            <a
+              class="card media-interview-card"
+              href="https://thefootballweek.com/2026/01/12/who-is-tarkan-batgun/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                class="media-interview-card__image"
+                src="assets/interviews/interview-the-football-week.jpg"
+                alt="The Football Week profile — featured image"
+                loading="lazy"
+              />
+              <span class="media-interview-card__title">The Football Week Profile</span>
+            </a>
+          </div>
         </div>
       </section>
 
@@ -970,7 +1022,12 @@
             Download a digital preview of The Book of Scouting Volume One and explore the introduction, first chapter,
             table of contents, and Global Council preview.
           </p>
-          <a class="btn btn-primary" href="#">Download the Free Sample (PDF)</a>
+          <a
+            class="btn btn-primary"
+            href="assets/sample/FREE%20SAMPLE-The%20Book%20of%20Scouting.pdf"
+            download="FREE-SAMPLE-The-Book-of-Scouting.pdf"
+            >Download the Free Sample (PDF)</a
+          >
         </div>
       </section>
     </main>

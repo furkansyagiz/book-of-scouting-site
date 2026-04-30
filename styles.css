@@ -19,6 +19,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -27,6 +28,7 @@ body {
   color: var(--text);
   background: var(--bg);
   line-height: 1.65;
+  overflow-x: hidden;
 }
 
 img {
@@ -283,9 +285,9 @@ a {
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  background: var(--primary);
+  background: transparent;
   flex-shrink: 0;
-  border: 2px solid rgba(15, 30, 51, 0.22);
+  border: 0;
   padding: 0;
   box-sizing: border-box;
   line-height: 0;
@@ -298,6 +300,9 @@ a {
   margin: 0 auto;
   object-fit: contain;
   object-position: center;
+  /* Recolor the light mark to #25aefd while keeping transparent pixels intact. */
+  filter: brightness(0) saturate(100%) invert(57%) sepia(94%) saturate(1946%) hue-rotate(174deg) brightness(104%)
+    contrast(103%);
 }
 
 .hero-partner-text {
@@ -455,6 +460,42 @@ a {
   margin-top: 1.25rem;
 }
 
+.media-interviews-grid {
+  margin-top: 0.75rem;
+}
+
+/* Full-card hit target: image + title open the news URL in a new tab. */
+a.card.media-interview-card {
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+a.card.media-interview-card:hover,
+a.card.media-interview-card:focus-visible {
+  box-shadow: 0 10px 28px rgba(15, 30, 51, 0.12);
+  transform: translateY(-2px);
+}
+
+.media-interview-card__image {
+  display: block;
+  width: calc(100% + 3rem);
+  max-width: none;
+  margin: -1.5rem -1.5rem 0.85rem;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.media-interview-card__title {
+  display: block;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--text);
+}
+
 /* Filled star row for testimonial cards (decorative; label is for screen readers). */
 .testimonial-stars {
   margin: 0.15rem 0 0.6rem;
@@ -605,6 +646,9 @@ a {
 
 .comparisonator-banner__copy {
   min-width: 0;
+  display: grid;
+  align-content: center;
+  gap: 0.2rem;
 }
 
 /* Serif headline + sans supporting lines keep parity with the rest of the marketing site. */
@@ -651,6 +695,7 @@ a {
   color: #fff;
   text-decoration: none;
   transition: background 0.2s ease, border-color 0.2s ease;
+  justify-self: start;
 }
 
 .comparisonator-banner__cta:hover,
@@ -664,6 +709,8 @@ a {
     grid-template-columns: 1fr;
     align-items: center;
     text-align: center;
+    gap: 1rem;
+    padding: 1.5rem 0;
   }
 
   .comparisonator-banner__logo-link {
@@ -680,6 +727,32 @@ a {
   .comparisonator-banner__tagline {
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 0.8rem;
+  }
+
+  .comparisonator-banner__cta {
+    justify-self: center;
+  }
+
+  /* Keep footer sections centered on mobile so links don't split awkwardly. */
+  .footer-grid {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.9rem;
+    padding: 1.15rem 0 0.8rem;
+    text-align: center;
+  }
+
+  .footer-links,
+  .social-links {
+    justify-content: center;
+    width: 100%;
+    row-gap: 0.45rem;
+  }
+
+  .copyright {
+    padding: 0.35rem 1rem 1.2rem;
   }
 }
 
@@ -688,7 +761,7 @@ a {
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
-  padding: 2rem 0 1rem;
+  padding: 1.35rem 0 1rem;
 }
 
 .site-footer {
@@ -702,6 +775,7 @@ a {
   display: flex;
   gap: 0.7rem;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 .link-btn {
@@ -716,7 +790,7 @@ a {
 .copyright {
   margin: 0;
   text-align: center;
-  padding: 0 1rem 2rem;
+  padding: 0.4rem 1rem 1.5rem;
   color: #b6c4d9;
 }
 
@@ -790,11 +864,20 @@ a {
   }
 
   .hero-grid,
-  .author-grid,
   .content-grid.two,
   .content-grid.three,
   .market-grid {
     grid-template-columns: 1fr;
+  }
+
+  /* Match selector specificity so desktop author 2-column rule cannot override mobile stacking. */
+  #about-author .author-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  #about-author .author-grid > div {
+    width: 100%;
   }
 
   .book-cover-placeholder,
