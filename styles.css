@@ -496,6 +496,13 @@ a.card.media-interview-card:focus-visible {
   color: var(--text);
 }
 
+/* Defer rendering this large section until the user scrolls near it (fewer upfront layout/paint cost). */
+#testimonials.section {
+  content-visibility: auto;
+  /* Approximate block size when skipped so scrollbars/layout stay stable across browsers that need a hint. */
+  contain-intrinsic-size: auto 3400px;
+}
+
 /* Filled star row for testimonial cards (decorative; label is for screen readers). */
 .testimonial-stars {
   margin: 0.15rem 0 0.6rem;
