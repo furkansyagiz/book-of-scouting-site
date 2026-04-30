@@ -68,3 +68,29 @@ const observer = new IntersectionObserver(
 for (const section of sections) {
   observer.observe(section);
 }
+
+/**
+ * Opening a URL with a hash (e.g. /#testimonials) scrolls immediately; IntersectionObserver + content-visibility
+ * can miss the first frame on mobile. Force the matched main section visible and unobserve once.
+ */
+function revealSectionFromHash() {
+  const raw = window.location.hash.slice(1);
+  if (!raw) return;
+  let id;
+  try {
+    id = decodeURIComponent(raw.replace(/\+/g, " "));
+  } catch {
+    id = raw;
+  }
+  const el = document.getElementById(id);
+  if (!el || !el.matches("main section")) return;
+  el.classList.add("visible");
+  observer.unobserve(el);
+}
+
+window.addEventListener("hashchange", revealSectionFromHash);
+
+// Run after observer is wired; rAF + delayed pass catches iOS/WebKit fragment scroll settling.
+requestAnimationFrame(revealSectionFromHash);
+setTimeout(revealSectionFromHash, 0);
+setTimeout(revealSectionFromHash, 150);

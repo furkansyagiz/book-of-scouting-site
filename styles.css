@@ -503,6 +503,12 @@ a.card.media-interview-card:focus-visible {
   contain-intrinsic-size: auto 3400px;
 }
 
+/* Deep links (e.g. /#testimonials) must render immediately; content-visibility:auto delays paint on some mobile browsers until an extra scroll. */
+#testimonials.section:target {
+  content-visibility: visible;
+  contain-intrinsic-size: unset;
+}
+
 /* Filled star row for testimonial cards (decorative; label is for screen readers). */
 .testimonial-stars {
   margin: 0.15rem 0 0.6rem;
