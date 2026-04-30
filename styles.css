@@ -278,23 +278,26 @@ a {
 }
 
 .hero-partner-badge {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  place-items: center;
   width: 56px;
   height: 56px;
   border-radius: 50%;
   background: var(--primary);
   flex-shrink: 0;
   border: 2px solid rgba(15, 30, 51, 0.22);
-  padding: 6px;
+  padding: 0;
   box-sizing: border-box;
+  line-height: 0;
 }
 
 .hero-partner-logo {
-  width: 100%;
-  height: 100%;
+  width: 40px;
+  height: 40px;
+  display: block;
+  margin: 0 auto;
   object-fit: contain;
+  object-position: center;
 }
 
 .hero-partner-text {
@@ -448,6 +451,10 @@ a {
   margin: 0.35rem 0;
 }
 
+.media-interviews-heading {
+  margin-top: 1.25rem;
+}
+
 /* Filled star row for testimonial cards (decorative; label is for screen readers). */
 .testimonial-stars {
   margin: 0.15rem 0 0.6rem;
@@ -455,6 +462,16 @@ a {
   line-height: 1.2;
   letter-spacing: 0.2em;
   color: #c9a227;
+}
+
+/* Keep testimonial preview images uniform, readable, and aligned across cards. */
+.testimonial-video-image {
+  display: block;
+  width: 100%;
+  margin: 0.2rem 0 0.7rem;
+  border-radius: 10px;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
 }
 
 /* Face-card layout for worldwide contributors section. */
@@ -526,6 +543,25 @@ a {
 #about-author .author-grid > div {
   display: grid;
   gap: 1rem;
+}
+
+#about-author .author-heading {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+#about-author .author-heading-link-text {
+  font-family: Inter, Arial, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+#about-author .author-heading-link-text a {
+  color: var(--primary);
+  text-decoration: underline;
 }
 
 #about-author .author-grid > div > p {
@@ -792,6 +828,10 @@ a {
   #about-author .author-placeholder img {
     aspect-ratio: 3 / 4;
     object-position: center 15%;
+  }
+
+  #about-author .author-heading {
+    align-items: flex-start;
   }
 }
 
