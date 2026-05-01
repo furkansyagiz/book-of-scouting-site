@@ -19,7 +19,6 @@
 
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden;
 }
 
 body {
@@ -28,6 +27,10 @@ body {
   color: var(--text);
   background: var(--bg);
   line-height: 1.65;
+}
+
+/* Horizontal overflow is clipped here—not on html/body—so .site-header position:sticky still sticks to the viewport. */
+.site-main-wrap {
   overflow-x: hidden;
 }
 
@@ -105,6 +108,7 @@ a {
 }
 
 .site-header {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 30;
